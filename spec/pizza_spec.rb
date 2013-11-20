@@ -15,6 +15,13 @@ describe Pizza::Pie do
 
 			expect(pizza.toppings).to eq(toppings)
 		end
+
+		it 'records a single topping' do
+			topping = Pizza::Topping.new('cheese', vegetarian:true)
+			pizza = Pizza::Pie.new(topping)
+
+			expect(pizza.toppings).to eq(topping)
+		end
 	end
 
 end 
